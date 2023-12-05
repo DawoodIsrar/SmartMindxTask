@@ -4,4 +4,4 @@ Switch to the client branch for instructions related to the frontend.
 Switch to the server branch for guidance on setting up the backend.
 Carefully follow the instructions provided in each branch's README file to ensure a smooth and successful setup of the SmartMindxTask project.
 
-Thank you for your attention to detail, and we appreciate your commitment to the project setup process.
+Thank you for your attention to detail, and I appreciate your commitment to the project setup process.
