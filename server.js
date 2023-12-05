@@ -21,8 +21,12 @@ app.use(morgan("dev"));
 
 const addTask = require('./routes/addTask')
 const allTask = require('./routes/allTasks')
+const updateTask = require('./routes/updateTask')
+const deleteTask = require('./routes/deleteTask')
 app.use(addTask)
 app.use(allTask)
+app.use(updateTask)
+app.use(deleteTask)
 // // Routes
 // readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));
 

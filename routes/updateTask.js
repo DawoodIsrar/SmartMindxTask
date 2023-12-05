@@ -1,7 +1,7 @@
-// const express = require('express');
+const express = require('express');
 
-// const updateUserInfo= require('../controllers/updateUserInfo')
-// const router = express.Router();
+const updateTask= require('../controllers/updateTask')
+const router = express.Router();
 
-// router.put('/updateUserInfo', updateUserInfo)
-// module.exports = router;
+router.put('/updateTask', updateTask)
+module.exports = router;
