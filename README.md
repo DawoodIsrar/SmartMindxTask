@@ -44,7 +44,11 @@ POST /addTask or (http://localhost:port/addTask): Adds a new task giving only ti
 {
   "title":"Dawood israr"
 }.
+
+
 GET /allTasks: Retrieves all tasks.
+
+
 PUT /updateTask: Updates a task by ID and title.
 req body for update postman req example  :
  (http://localhost:port/updateTask)
@@ -52,6 +56,9 @@ req body for update postman req example  :
   "id":"656f682e438fe58c6ccca974",
   "title":"Dawood khan"
 }
+
+
+
 DELETE /deleteTask/:id: Deletes a task by ID.
 delete api call in postman example (http://localhost:port/deleteTask/656f69df438fe58c6ccca980)
 These routes are implemented in separate files located in the routes directory.
