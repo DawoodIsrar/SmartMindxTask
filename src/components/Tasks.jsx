@@ -33,6 +33,7 @@ const TodoList = () => {
     try {
       const response = await axios.delete(`http://localhost:8000/deleteTask/${taskId}`);
       toast.success(response.data.message);
+     
       fetchTasks();
     } catch (error) {
       toast.error(error.response.data);
@@ -46,10 +47,10 @@ const TodoList = () => {
   const handleEditTask = async (taskId, index) => {
     try {
       setRowIndex(index);
-
-      const response = await axios.patch('http://localhost:8000/updateTask', {
+   console.log("here task from click :",taskId)
+      const response = await axios.put('http://localhost:8000/updateTask', {
         id: taskId,
-        taskDetail: updateTask,
+        title: updateTask,
       });
 
       toast.success(response.data.message);
@@ -63,7 +64,10 @@ const TodoList = () => {
   const fetchTasks = async () => {
     try {
       const response = await axios.get('http://localhost:8000/allTasks');
-      setTasks(response.data.data || []);
+      console.log(response.data[0].title)
+    
+      setTasks(response.data || []);
+    
     } catch (error) {
       console.error('Error fetching tasks:', error);
       toast.error('Error fetching tasks');
@@ -73,6 +77,7 @@ const TodoList = () => {
   useEffect(() => {
     fetchTasks();
   }, []);
+
 
   return (
     <div className="main">
@@ -139,7 +144,9 @@ const TodoList = () => {
           <div className="spacer1" />
 
           <div className="list">
-            {tasks.map((task, index) => (
+           
+            {
+            tasks.map((task, index) => (
               <div key={task.id} className="task-item">
                 {updated && index === rowIndex ? (
                   <InputGroup className="mb-3">
@@ -167,13 +174,13 @@ const TodoList = () => {
                         justifyContent: 'center',
                         backgroundColor: '#B79F97',
                       }}
-                      onClick={() => handleEditTask(task.id, index)}
+                      onClick={() => handleEditTask(task._id, index)}
                     >
                       <FontAwesomeIcon icon={faEdit} />
                     </Button>
                   </InputGroup>
                 ) : (
-                  <p>{task.taskDetail}</p>
+                  <p>{task.title}</p>
                 )}
                 <div style={{ display: 'inline-flex', gap: '0.3rem' }}>
                   <div>
@@ -189,7 +196,7 @@ const TodoList = () => {
                         justifyContent: 'center',
                         backgroundColor: '#B79F97',
                       }}
-                      onClick={() => handleDeleteTask(task.id)}
+                      onClick={() => handleDeleteTask(task._id)}
                     >
                       <FontAwesomeIcon icon={faTrash} />
                     </Button>
