@@ -22,12 +22,12 @@ npm
 #Installation
 
 Clone the repository:
-git clone -b client <repository-url>
+git clone -b client repository-url
 
 #Navigate to the project directory:
 
 
-cd <project-directory>
+cd project-directory
 
 #Install dependencies:
 
