@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = require("mongoose");
 
-const courseSchema = new Schema(
+const taskSchema = new Schema(
   {
     title: {
       type: String,
@@ -13,4 +13,4 @@ const courseSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Tasks", courseSchema);
+module.exports = mongoose.model("Tasks", taskSchema);
