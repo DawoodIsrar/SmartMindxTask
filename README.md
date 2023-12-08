@@ -35,14 +35,17 @@ Make sure MongoDB is running on your machine or provide the appropriate connecti
 
 6.Usage
 To start the application, run the following command:
-npm start
+Starting server in the Dev mood 
+command:
+cd .\src\ 
+ts-node server.ts
 
 7.Routes
 The application exposes the following routes:
 
 POST /addTask or (http://localhost:port/addTask): Adds a new task giving only title in req body
 {
-  "title":"Dawood israr"
+  "title":"Develop Task management system frontend"
 }.
 
 
@@ -54,7 +57,7 @@ req body for update postman req example  :
  (http://localhost:port/updateTask)
 {
   "id":"656f682e438fe58c6ccca974",
-  "title":"Dawood khan"
+  "title":"Develop Task management system backend"
 }
 
 
